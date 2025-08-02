@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'No tests...'
+                echo 'Skipping tests...No tests...'
             }
         }
         stage('Build') {
@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                bat 'npx vercel --prod --token --yes --token=%VERCEL_TOKEN%'
+                bat 'npx vercel --prod --yes --token=%VERCEL_TOKEN%'
             }
         }
     }
